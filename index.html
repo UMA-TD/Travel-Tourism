@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+    <link rel="stylesheet" href="C:\Users\UMA  T D\OneDrive\Documents\travel-website\css\s2.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            background-image: url('C:/Users/UMA  T D/OneDrive/Documents/travel-website/images/bg4.avif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul a {
+            text-decoration: none;
+        }
+
+        /* Sign-Up Form Styling */
+        .signup-form {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+
+        .signup-form h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .signup-form input[type="text"],
+        .signup-form input[type="email"],
+        .signup-form input[type="password"],
+        .signup-form input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .signup-form button {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .signup-form button:hover {
+            background-color: #555;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .close-btn:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <div class="logo">
+            <h2>EXPLORE</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Places</a></li>
+                <li><a href="#">Booking</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="signup">
+            <a href="#" id="signup-link">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Home Section -->
+    <section class="home_section">
+        <div class="overlay">
+            <div class="container">
+                <div class="home">
+                    <h1>
+                        <span>meet</span> people <br>
+                        discover <span>places</span> <br>
+                        <span>enjoy</span> time
+                    </h1>
+                    <div class="home_buttons">
+                        <a href="C:\Users\UMA  T D\OneDrive\Documents\travel-website\html\destinations.html">
+                            <button class="btn1">Explore India</button>
+                        </a>
+                        <a href="C:\Users\UMA  T D\OneDrive\Documents\travel-website\images\v.mp4">
+                            <button>
+                                <i class="fas fa-play"></i> Video
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign-Up Form -->
+    <div class="signup-form" id="signup-form">
+        <span class="close-btn" id="close-btn">&times;</span>
+        <h3>Sign Up</h3>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Company Section -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                    </ul>
+                </div>
+                <!-- Get Help Section -->
+                <div class="footer-col">
+                    <h4>Get Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                    </ul>
+                </div>
+                <!-- Bookings Section -->
+                <div class="footer-col">
+                    <h4>Bookings</h4>
+                    <ul>
+                        <li><a href="#">Accommodation</a></li>
+                        <li><a href="#">Travel Plan</a></li>
+                    </ul>
+                </div>
+                <!-- Follow Us Section -->
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript to Handle Sign-Up Form Visibility -->
+    <script>
+        const signupLink = document.getElementById('signup-link');
+        const signupForm = document.getElementById('signup-form');
+        const closeBtn = document.getElementById('close-btn');
+
+        signupLink.addEventListener('click', () => {
+            signupForm.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            signupForm.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
